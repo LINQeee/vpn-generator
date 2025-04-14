@@ -15,6 +15,7 @@ A CLI tool to generate one-day trial accounts for **hidexk.name** VPN service. T
 ### Install globally via npm:
 
 ```
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 npm install -g vpn-generator
 ```
 
@@ -39,16 +40,6 @@ vpn
 
 - The **Troywell** browser extension must be installed and enabled in your browser for VPN activation.
 - Make sure to allow the program to interact with your browser for best automation.
-
-## Configuration (Optional)
-
-If you do not want Puppeteer to download Chromium, you can skip this step by setting the `PUPPETEER_SKIP_CHROMIUM_DOWNLOAD` environment variable to `true`:
-
-```
-export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-```
-
-This will prevent Puppeteer from downloading Chromium and you can use your own installation of Chromium or another compatible browser.
 
 ## Troubleshooting
 
