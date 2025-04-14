@@ -1,14 +1,15 @@
 # vpn-generator
 
-A CLI tool to generate one-day trial accounts for **hidexk.name** VPN service. This tool automates the process of creating accounts, verifying emails, and enabling VPN within a browser. It also works with the recommended **Troywell** browser extension for seamless VPN operation.
+A CLI tool to generate one-day trial accounts for **hidexk.name** VPN service. This tool automates the process of account creation, verification, and login to the VPN app — making the experience seamless with just a few steps.
 
 ## Features
 
-- Automatically generates one-day trial VPN accounts for **hidexk.name**.
-- Starts the VPN program and enables VPN in the browser.
-- Works with the **Troywell** browser extension for better experience.
-- Copies the generated email to the clipboard.
-- After email verification, automatically retrieves the verification code and completes the setup.
+- Automatically generates one-day trial VPN accounts for **hidexk.name**
+- Opens Chrome and waits for user to activate VPN via **Troywell** extension
+- Copies the generated email to clipboard
+- Automatically retrieves the verification code after email confirmation
+- Launches the **hidemy.name VPN** app and logs in automatically
+- Supports `--not-logged` flag if you're not already logged into the app
 
 ## Installation
 
@@ -19,33 +20,43 @@ export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 sudo npm install -g vpn-generator
 ```
 
+> ⚠️ **Important:**  
+> After installation, you **must enable Accessibility access** for your terminal (Terminal or iTerm2):
+>
+> - Go to **System Settings** → **Privacy & Security** → **Accessibility**
+> - Enable access for your terminal app (e.g., Terminal, iTerm)
+
 ## Usage
 
-Once the library is installed, you can use the `vpn` command in the terminal:
+Once installed, simply run:
 
 ```
 vpn
 ```
 
-### Workflow
+This will:
 
-1. The program will generate a one-day trial VPN account for **hidexk.name**.
-2. It will automatically open the browser.
-3. The **Troywell** browser extension should be installed and active for best results.
-4. Once the browser is open, the user must manually enable the VPN.
-5. The generated email will be copied to your clipboard.
-6. After the email is confirmed, the program will wait for a minute and then retrieve the verification code.
-7. The program will automatically enter the code and complete the account setup.
+1. Launch Chrome
+2. Prompt you to manually enable VPN using the **Troywell** browser extension
+3. Wait for you to press any key in the terminal once VPN is activated
+4. Automatically create a trial account, verify the email, and copy credentials
+5. Open the **hidemy.name VPN** application and log you in
 
-### Requirements
+### If you're not logged into the VPN app
 
-- The **Troywell** browser extension must be installed and enabled in your browser for VPN activation.
-- Make sure to allow the program to interact with your browser for best automation.
+Run the command with the `--not-logged` flag:
 
-## Troubleshooting
+```
+vpn --not-logged
+```
 
-- **Troywell extension not detected**: Make sure the extension is properly installed and enabled in your browser. You can check the extension's settings to ensure it is working.
-- **Email verification code not retrieved**: This could be due to delays in the email system. Please ensure that your email client isn't blocking emails from **hidexk.name**.
+This ensures the tool knows to perform the login process from scratch inside the VPN app UI.
+
+## Requirements
+
+- macOS system with **Accessibility access granted** for the terminal
+- Installed **Troywell** extension in Chrome
+- VPN app **hidemy.name VPN** installed in `/Applications`
 
 ## License
 
