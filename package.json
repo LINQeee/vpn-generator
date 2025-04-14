@@ -1,10 +1,12 @@
 {
-  "name": "vpn",
+  "name": "vpn-generator",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "license": "MIT",
   "dependencies": {
     "axios": "^1.8.4",
+    "clipboardy": "^4.0.0",
     "free-proxy": "^0.2.1",
     "hide-my-name-vpn": "^1.0.1",
     "https-proxy-agent": "^7.0.6",
@@ -14,5 +16,19 @@
     "puppeteer": "^24.5.0",
     "quoted-printable": "^1.0.1",
     "socks-proxy-agent": "^8.0.5"
-  }
+  },
+  "bin": {
+    "vpn": "./bin/vpn"
+  },
+  "files": [
+    "index.mjs",
+    "bin/",
+    "README.MD"
+  ],
+  "keywords": [
+    "vpn",
+    "cli",
+    "generator"
+  ],
+  "author": "Adrian Vvedenskii"
 }

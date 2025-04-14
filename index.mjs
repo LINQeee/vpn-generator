@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { exec } from 'child_process'
+import clipboardy from 'clipboardy'
 import iconv from 'iconv-lite'
 import PromptSync from 'prompt-sync'
 import { connect } from 'puppeteer'
@@ -16,6 +17,7 @@ let email, password, token, browser
 
 const startChrome = () =>
   new Promise((resolve) => {
+    exec('pkill -f "Google Chrome"', () => console.log('🔻 Chrome закрыт'))
     const chromePath =
       '/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome'
     const userDataDir = `${process.env.HOME}/Library/Application Support/Google/Chrome`
@@ -36,6 +38,7 @@ async function createEmail() {
 
   const res = await axios.post(`${API_URL}/token`, { address: email, password })
   token = res.data.token
+  clipboardy.writeSync(email)
   console.log(`🔹 email: ${email}`)
 }
 
@@ -56,7 +59,9 @@ async function getFullEmail(sourceUrl) {
     let resStr = res.data.data.replace(/=\r?\n/g, '')
     const decoded = qp.decode(resStr)
     const utf8res = iconv.decode(Buffer.from(decoded, 'binary'), 'utf-8')
-    console.log(`${email}:${utf8res.match(/\d{14}/)[0]}`)
+    const code = utf8res.match(/\d{14}/)[0]
+    clipboardy.writeSync(code)
+    console.log(`${email}:${code}`)
     process.exit(0)
   }
 }
@@ -72,7 +77,6 @@ async function checkEmails() {
 
   if (messages.length > 0)
     await Promise.all(messages.map((url) => getFullEmail(url)))
-  else console.log('📭 Нет новых писем')
 }
 
 async function main() {
