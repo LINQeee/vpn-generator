@@ -16,7 +16,7 @@ A CLI tool to generate one-day trial accounts for **hidexk.name** VPN service. T
 
 ```
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-npm install -g vpn-generator
+sudo npm install -g vpn-generator
 ```
 
 ## Usage
@@ -30,11 +30,12 @@ vpn
 ### Workflow
 
 1. The program will generate a one-day trial VPN account for **hidexk.name**.
-2. It will automatically open the browser and enable the VPN.
+2. It will automatically open the browser.
 3. The **Troywell** browser extension should be installed and active for best results.
-4. The generated email will be copied to your clipboard.
-5. After the email is confirmed, the program will wait for a minute and then retrieve the verification code.
-6. The program will automatically enter the code and complete the account setup.
+4. Once the browser is open, the user must manually enable the VPN.
+5. The generated email will be copied to your clipboard.
+6. After the email is confirmed, the program will wait for a minute and then retrieve the verification code.
+7. The program will automatically enter the code and complete the account setup.
 
 ### Requirements
 
