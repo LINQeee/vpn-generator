@@ -16,8 +16,9 @@ const generatePassword = () =>
 let email, password, token, browser
 
 const startChrome = () =>
-  new Promise((resolve) => {
+  new Promise(async (resolve) => {
     exec('pkill -f "Google Chrome"', () => console.log('🔻 Chrome закрыт'))
+    await new Promise((resolve) => setTimeout(resolve, 1000))
     const chromePath =
       '/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome'
     const userDataDir = `${process.env.HOME}/Library/Application Support/Google/Chrome`
