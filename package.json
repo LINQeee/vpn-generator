@@ -5,19 +5,14 @@
   "type": "module",
   "license": "MIT",
   "dependencies": {
+    "1secmail-api": "^1.1.1",
     "axios": "^1.8.4",
-    "clipboardy": "^4.0.0",
-    "free-proxy": "^0.2.1",
-    "hide-my-name-vpn": "^1.0.1",
-    "https-proxy-agent": "^7.0.6",
     "iconv-lite": "^0.6.3",
     "node-fetch": "^3.3.2",
-    "prompt-sync": "^4.2.0",
+    "onesecmail": "^3.0.0",
     "puppeteer": "^24.5.0",
     "quoted-printable": "^1.0.1",
-    "robot": "^0.3.0",
-    "robotjs": "^0.6.0",
-    "socks-proxy-agent": "^8.0.5"
+    "robotjs": "^0.6.0"
   },
   "bin": {
     "vpn": "./bin/vpn"
