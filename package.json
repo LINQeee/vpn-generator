@@ -15,7 +15,8 @@
     "index.mjs",
     "bin/",
     "README.MD",
-    "lib/"
+    "lib/",
+    "troywell-extension/"
   ],
   "keywords": [
     "vpn",
