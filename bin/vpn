@@ -1,7 +1,2 @@
 #!/usr/bin/env node
-import('../lib/chromeUtils.js')
-import('../lib/mailUtils.js')
-import('../lib/troywellActivator.js')
-import('../lib/utils.js')
-import('../lib/vpnActivator.js')
 import('../index.mjs')
