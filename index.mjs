@@ -6,6 +6,7 @@ import {
   waitForCode,
 } from './lib/mailUtils.js'
 import { activateTroywell } from './lib/troywellActivator.js'
+import { goto } from './lib/utils.js'
 import { activateVPN } from './lib/vpnActivator.js'
 
 async function main() {
@@ -20,7 +21,7 @@ async function main() {
   const mail = await createMail(browser)
 
   const page = await browser.newPage()
-  await page.goto('https://hidxmy.name/demo/')
+  await goto(page, 'https://hidxmy.name/demo/')
 
   await page.evaluate(async (myMail) => {
     document.querySelector('input[name=demo_mail]').value = myMail
