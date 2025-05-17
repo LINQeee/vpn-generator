@@ -5,13 +5,7 @@
   "type": "module",
   "license": "MIT",
   "dependencies": {
-    "1secmail-api": "^1.1.1",
-    "axios": "^1.8.4",
-    "iconv-lite": "^0.6.3",
-    "node-fetch": "^3.3.2",
-    "onesecmail": "^3.0.0",
     "puppeteer": "^24.5.0",
-    "quoted-printable": "^1.0.1",
     "robotjs": "^0.6.0"
   },
   "bin": {
