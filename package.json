@@ -14,7 +14,8 @@
   "files": [
     "index.mjs",
     "bin/",
-    "README.MD"
+    "README.MD",
+    "lib/"
   ],
   "keywords": [
     "vpn",
