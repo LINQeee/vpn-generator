@@ -16,7 +16,7 @@ A CLI tool to generate one-day trial accounts for **hidexk.name** VPN service. T
 ### Install globally via npm:
 
 ```
-export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_SKIP_DOWNLOAD=true
 sudo npm install -g vpn-generator
 ```
 
