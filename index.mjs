@@ -6,7 +6,7 @@ import {
   waitForCode,
 } from './lib/mailUtils.js'
 import { activateTroywell } from './lib/troywellActivator.js'
-import { goto } from './lib/utils.js'
+import { goto, sleep } from './lib/utils.js'
 import { activateVPN } from './lib/vpnActivator.js'
 
 async function main() {
@@ -27,6 +27,8 @@ async function main() {
     document.querySelector('input[name=demo_mail]').value = myMail
   }, mail)
   await page.click('button[type=submit]')
+  await sleep(2000)
+  await page.close()
   await confirmMail()
   const code = await waitForCode()
 
